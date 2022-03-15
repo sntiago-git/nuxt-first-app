@@ -29,7 +29,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/vuetify',
   ],
+
+  //Custom variables scss and vuitify
+  vuetify: {
+    customVariables: ['~/assets/variables.scss']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

@@ -1,4 +1,5 @@
 <template>
+  <!--
   <div class="post-card">
     <small>#{{ post.id }} | User ID: {{ post.userId }} </small><br />
     <strong> {{ post.title }} </strong>
@@ -6,6 +7,10 @@
     <nuxt-link :to="'/posts/' + post.id">Ver (nuxt-link)</nuxt-link> |
     <button @click="goToPost(post.id)">Ver (router push)</button>
     <hr />
+  </div> -->
+
+  <div>
+    
   </div>
 </template>
 
@@ -38,17 +43,4 @@ export default {
 </script>
 
 <style>
-ul {
-  list-style: none;
-}
-.post-card {
-  width: 400px;
-  margin: auto;
-  text-align: left;
-}
-
-.posts-container {
-  text-align: center;
-  align-content: center;
-}
 </style>

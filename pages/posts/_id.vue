@@ -54,18 +54,5 @@ export default {
 </script>
 
 <style>
-ul {
-  list-style: none;
-}
-.post-card {
-  width: 400px;
-  margin: auto;
-  text-align: left;
-}
-
-.posts-container {
-  text-align: center;
-  align-content: center;
-}
 </style>
 

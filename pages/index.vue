@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-logo> </nuxt-logo>
+    <nuxt-logo></nuxt-logo>
     <Tutorial />
   </div>
 </template>
