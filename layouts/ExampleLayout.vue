@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 style="background-color: transparent">Example Layout 1</h2>
+    <h2 style="background-color: transparent">Example Layout 1 (SOY OTRO LAYOUT DISTINTO AL DEFAULT)</h2>
 
     <Nuxt />
   </div>

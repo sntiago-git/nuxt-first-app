@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-container>
     <nuxt-logo></nuxt-logo>
     <Tutorial />
-  </div>
+  </v-container>
 </template>
 
 <script>

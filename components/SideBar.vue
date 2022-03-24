@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app permanent expand-on-hover>
+  <v-navigation-drawer app permanent expand-on-hover :mini-variant.sync="mini" >
     <v-list>
       <v-list-item class="px-2">
         <v-list-item-avatar>
@@ -35,7 +35,7 @@
         <v-list-item-icon>
           <v-icon>mdi-information</v-icon>
         </v-list-item-icon>
-        <v-list-item-title>About us</v-list-item-title>
+        <v-list-item-title>Our Site</v-list-item-title>
       </v-list-item>
       <v-list-item link nuxt to="/examplepage1">
         <v-list-item-icon>
@@ -43,12 +43,58 @@
         </v-list-item-icon>
         <v-list-item-title>New</v-list-item-title>
       </v-list-item>
+
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon>mdi-moon-waning-crescent</v-icon>
+        </v-list-item-icon>
+        <!-- SE EJECUTA EL WATCH CADA VEZ-->
+        <v-switch :input-value="darkmode" v-model="darkmode"></v-switch>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-export default {};
+import { mapGetters, mapMutations } from "vuex";
+
+export default {
+  data() {
+    return {
+      darkmode: false,
+      mini: true,
+    };
+  },
+
+  watch: {
+    //SE EJECUTA CADA VEZ QUE SE ACTUALIZA LA VARIABLE.
+    darkmode() {
+      console.log("| WATCH EXECUTED|");
+      this.handledarkmode();
+    },
+  },
+
+  methods: {
+    handledarkmode() {
+      if (this.darkmode === true) {
+        this.$vuetify.theme.dark = true;
+        this.$auth.$storage.setLocalStorage("darkmode", true);
+      } else {
+        this.$auth.$storage.setLocalStorage("darkmode", false);
+        this.$vuetify.theme.dark = false;
+      }
+    },
+  },
+
+  created() {
+    if (this.$auth.$storage.getLocalStorage("darkmode")) {
+      const value = this.$auth.$storage.getLocalStorage("darkmode") === true;
+      this.darkmode = value; //SE SETEA EL VALOR DE LA VARIABLE REACTIVA (por defecto es false) Y SE EJECUTA EL WATCH
+    } else {
+      this.handledarkmode();
+    }
+  },
+};
 </script>
 
 <style>

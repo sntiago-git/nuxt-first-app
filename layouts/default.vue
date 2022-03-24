@@ -1,11 +1,13 @@
 <template>
-  <v-app id="inspire">
-    <SideBar />
-    <v-main>
-      <!-- router-view -->
-      <Nuxt />
-    </v-main>
-  </v-app>
+  <v-lazy>
+    <v-app id="inspire" mini-variant.sync>
+      <SideBar />
+      <v-main>
+        <!-- router-view -->
+        <Nuxt />
+      </v-main>
+    </v-app>
+  </v-lazy>
 </template>
 
 <script>
